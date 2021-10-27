@@ -1,0 +1,19 @@
+---
+- name: Update Group1
+  hosts: g1
+
+  tasks:
+  - name: Ensure WEB directory created
+    file:
+      path: /home/centos/web
+      state: directory
+
+- name: Update Group2
+  hosts: g2
+
+  tasks:
+  - name: Ensure APP directory created
+    file:
+      path: /home/centos/app
+      state: directory
+...
