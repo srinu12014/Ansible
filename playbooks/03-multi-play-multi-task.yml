@@ -1,0 +1,33 @@
+---
+- name: Update Group1
+  hosts: g1
+
+  tasks:
+  - name: Ensure WEB directory created
+    file:
+      path: /home/centos/web
+      state: directory
+
+- name: Update Group2
+  hosts: g2
+
+  tasks:
+  - name: Ensure APP directory created
+    file:
+      path: /home/centos/app
+      state: directory
+
+- name: Update All infra
+  hosts: all
+
+  tasks:
+  - name: Ensure APP directory created
+    file:
+      path: /home/centos/common
+      state: directory
+
+  - name: Ensure Patch Downloaded
+    get_url:
+      dest: /home/centos/common
+      url: https://github.com/ravi2krishna/ecomm/archive/refs/heads/master.zip
+...        
