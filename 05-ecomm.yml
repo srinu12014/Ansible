@@ -1,0 +1,17 @@
+---
+- name: Update Group1
+  hosts: g1
+  become: yes
+
+  tasks:
+  - name: Ensure GIT installed
+    package:
+      name: git
+      state: present
+
+  - name: Ensure APP Deployed
+    git:
+      dest: /var/www/html
+      repo: https://github.com/ravi2krishna/ecomm.git
+
+...
