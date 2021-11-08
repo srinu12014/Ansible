@@ -1,0 +1,9 @@
+---
+- name: Update Group1
+  hosts: w5
+  become: yes
+
+  roles:
+  - web-role
+
+...

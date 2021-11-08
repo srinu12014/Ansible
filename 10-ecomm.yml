@@ -1,0 +1,17 @@
+---
+- name: Update Group2
+  hosts: g2
+  become: yes
+
+  tasks:
+  - name: remove index
+    file:
+      path: /var/www/html/index.html
+      state: absent
+    run_once: true
+
+  - name: Ensure APP Deployed
+    git:
+      dest: /var/www/html
+      repo: https://github.com/ravi2krishna/ecomm.git
+...

@@ -1,0 +1,12 @@
+---
+- name: Update Group1
+  hosts: all
+  become: yes
+
+  tasks:
+
+  - name: Update File
+    copy:
+      dest: /var/www/html/static.html
+      src: static.html
+...

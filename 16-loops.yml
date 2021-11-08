@@ -1,0 +1,17 @@
+---
+- name: Update Group1
+  hosts: w1
+  become: yes
+
+  tasks:
+  - name: Ensure User1 created
+    user:
+      name: '{{ item }}'
+      state: present
+
+    loop:
+      - a1
+      - a2
+      - a3
+      - a4
+...

@@ -1,0 +1,4 @@
+---
+# tasks file for web-role
+ - import_tasks: install.yml
+ - import_tasks: config.yml
